@@ -1,0 +1,38 @@
+﻿<ContentDialog
+    x:Class="TaskList.Dialogs.AppointmentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="New Appointment"
+    PrimaryButtonText="Save"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollMode="Disabled">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <TextBox Grid.Row="0" Name="NameTextBox" Margin="0,5,0,5" PlaceholderText="Name" />
+            <TextBox Grid.Row="1" Name="DescriptionTextBox" Margin="0,5,0,5" PlaceholderText="Description" TextWrapping="Wrap" AcceptsReturn="True" IsSpellCheckEnabled="True"/>
+            <StackPanel Grid.Row="2" Margin="0,5,0,5">
+                <DatePicker Name="StartDatePicker" Margin="0,0,0,5" />
+                <TimePicker Name="StartTimePicker" HorizontalAlignment="Stretch" Margin="0,5,0,5"/>
+                <TextBlock Text="to" HorizontalAlignment="Center" />
+                <DatePicker Name="StopDatePicker" Margin="0,5,0,5" />
+                <TimePicker Name="StopTimePicker" HorizontalAlignment="Stretch" Margin="0,5,0,0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Margin="0,5,0,5">
+                <TextBox Name="AttendeesTextBox" PlaceholderText="Attendees" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+    
+</ContentDialog>
